@@ -1,0 +1,14 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 50px 0px 50px;
+}
+
+.calendarMonth {
+  margin: 40px 0 20px 0;
+  width: 100%;
+}
+
+.calendarTable {
+  margin: 50px;
+}

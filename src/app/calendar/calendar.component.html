@@ -1,0 +1,41 @@
+<mat-toolbar>
+  <div>
+    <span>My App</span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-button [routerLink]="['/']">Home</button>
+  </div>
+  <div class="example-button-row">
+    <button mat-stroked-button color="primary" (click)="logOut()">LogOut</button>
+  </div>
+</mat-toolbar>
+
+<div class="row text-center calendarMonth">
+  <div class="col-md-4">
+    <div class="btn-group">
+      <div class="btn btn-primary" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate">
+        Previous
+      </div>
+      <div class="btn btn-outline-secondary" mwlCalendarToday [(viewDate)]="viewDate">
+        Today
+      </div>
+      <div class="btn btn-primary" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate">
+        Next
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <h3>{{ viewDate | calendarDate:(view + 'ViewTitle') }}</h3>
+  </div>
+</div>
+
+<div class="calendarTable" [ngSwitch]="view">
+  <mwl-calendar-month-view
+    *ngSwitchCase="view"
+    [viewDate]="viewDate" (dayClicked)="dayClicked($event.day)">
+  </mwl-calendar-month-view>
+</div>
+
+<router-outlet></router-outlet>
+

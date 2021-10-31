@@ -1,0 +1,14 @@
+<mat-toolbar>
+  <div>
+    <span>My App</span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-button [routerLink]="['/home']">Home</button>
+    <button mat-button (click)="loginAlert()" [routerLink]="['/calendar']">Calendar</button>
+  </div>
+  <div class="example-button-row">
+    <button mat-stroked-button color="primary" [routerLink]="['/login']">Login</button>
+  </div>
+</mat-toolbar>
+<p class="wellcome">Wellcome</p>
